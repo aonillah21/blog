@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="container content-utama">
+    <div class="col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-md-10 d-flex justify-content-center">
+                <div class="col-sm-3">
+                    <img class="img-fluid rounded-circle" src="{{ .Params.photo }}" alt=""/>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-10 d-flex justify-content-center">
+                <h3>{{ .Params.name }}</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-10 d-flex justify-content-center">
+                {{ .Content }}
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-10 d-flex justify-content-center">
+                {{ with .Params.instagram }}
+                    <p class="mx-1">
+                        <a href="https://instagram.com/{{ substr . 1 }}">
+                            <h4><i class="bi bi-instagram"></i></h4>
+                        </a>
+                    </p>
+                    <p class="mx-1">
+                        <a href="https://facebook.com/{{ substr . 1 }}">
+                            <h4><i class="bi bi-facebook"></i></h4>
+                        </a>
+                    </p>
+                    <p class="mx-1">
+                        <a href="https://github.com/{{ substr . 1 }}">
+                            <h4><i class="bi bi-github"></i></h4>
+                        </a>
+                    </p>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{end}}
+
+
+

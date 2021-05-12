@@ -1,0 +1,213 @@
+
+{{ define "main" }}
+    <section id="home">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container pl-4">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <div class="row row-nama">
+                            <div class="col">
+                                <h1>De Firman Aonillah Efwan</h1>
+                            </div>
+                        </div>
+                        <div class="row row-jobpos">
+                            <div class="col">
+                                <h6>Web Developer</h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Section -->
+                    <div class="col-sm-5">
+                        <div class="row align-content-center row-photo">
+                            <div class="col">
+                                <img class="img-fluid img-profile" src="/firman.jpg" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e9ecef" fill-opacity="1" d="M0,192L48,208C96,224,192,256,288,240C384,224,480,160,576,149.3C672,139,768,181,864,170.7C960,160,1056,96,1152,80C1248,64,1344,96,1392,112L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+    </section>
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center about-header">
+                    <h1>About Me</h1>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center row-about-me">
+                    <div class="col-md-8 text-center">
+                        <p>
+                            Hi, My name is Firman. 
+                            I’m a front end developer from Bandung, Indonesia.
+                             I help brands turn their ideas into high quality products.
+                            <br/>
+                            <br/>
+                            I have 2 years experience as web developer.
+                            Usually i created web with Javascript programming Language with Angular and React JS. 
+                            Also i have some experience as backend developer with node JS and Java Spring boot programming language                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e9ecef" fill-opacity="0.9" d="M0,96L60,96C120,96,240,96,360,112C480,128,600,160,720,181.3C840,203,960,213,1080,202.7C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </section>
+
+    <section id="works">
+        <div class="jumbotron-fluid jumbotron">
+            <div class="container" >
+                <div class="row">
+                    <div class="col-sm-12 text-center works-header">
+                        <h1>Works</h1>
+                    </div>
+                </div>
+                <div class="row row-works">
+                    {{ $paginator := .Paginate (where .Site.RegularPages "Section" "projects") }}
+                    {{ range $paginator.Pages }}
+                        <div class="col-md-4 mb-4">
+                            <div class="card card-content">
+                                {{if isset .Params "title_image"}}
+                                    <a href="{{.Permalink}}">
+                                        <img loading="lazy" class="card-img-top" src="{{.Params.title_image}}" alt="Card image cap">
+                                    </a>
+                                {{end}}
+                                <div class="card-body">
+                                    <div class="content-title">
+                                        <h6 class="card-title text-capitalize"> 
+                                            <a class="title-link" href="{{.Permalink}}">
+                                                <strong> {{.Title}} </strong>
+                                            </a>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{end}}
+
+                    <div class="row mt-2">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-sm-4 d-flex justify-content-center">
+                                    {{ template "_internal/pagination.html" . }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e9ecef" fill-opacity="1" d="M0,192L48,208C96,224,192,256,288,240C384,224,480,160,576,149.3C672,139,768,181,864,170.7C960,160,1056,96,1152,80C1248,64,1344,96,1392,112L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+    </section>
+    <section id="skillset">
+        <div class="container" style="min-height: 80vh;">
+            <div class="row">
+                <div class="col-sm-12 text-center works-header">
+                    <h1>Skillset</h1>
+                </div>
+            </div>
+            <div class="row">
+                {{ range where .Site.RegularPages "Section" "skillset"}}
+                    <div class="col-md-4 mb-4">
+                        <div class="card card-transparent p-2" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                              <div class="col-sm-4 d-flex align-self-center skill-center">
+                                {{if isset .Params "title_image"}}
+                                    <img class="img-skill-contact" src="{{.Params.title_image}}" alt="Card image cap">
+                                {{end}}
+                              </div>
+                              <div class="col-sm-8 skill-center">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{.Title}}</h5>
+                                  {{ .Content}}
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div> 
+            <div class="container" style="min-height: 20vh;">
+                <div class="row my-3">
+                    <div class="col-sm-12 text-center works-header">
+                        <h1>Contact</h1>
+                    </div>
+                </div>
+                <div class="row p-3 text-center">
+                    <!-- <div class="col-sm-6">
+                        <div class="card card-transparent p-2">
+                            <div class="row no-gutters">
+                            <div class="col-sm-3 d-flex align-self-center">
+                                <img class="img-skill-contact" src="/images/call-logo.png" alt="Card image cap">
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="card-body">
+                                +6282321265711
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                -->
+                    <div class="col-sm-12 justify-content-center d-flex">
+                        <section class="social-share">
+                            <ul class="share-icons">
+                            <!-- Twitter -->
+                            <li>
+                                <a href="" target="_blank" rel="noopener" aria-label="Share on Twitter" class="share-btn twitter">
+                                <h3>
+                                    <i class="bi bi-twitter"></i> 
+                                    </h3>
+                                </a>
+                            </li>
+                        
+                            <!-- Facebook -->
+                            <li>
+                                <a href="https://www.facebook.com/Aonillah21/" target="_blank" rel="noopener" aria-label="Share on Facebook" class="share-btn facebook">
+                                    <h3>
+                                        <i class="bi bi-facebook"></i>
+                                    </h3>
+                                </a>
+                            </li>
+                        
+                            <!-- LinkedIn -->
+                            <li>
+                                <a href="" target="_blank" rel="noopener" aria-label="Share on LinkedIn" class="share-btn linkedin">
+                                    <h3>
+                                        <i class="bi bi-linkedin"></i>
+                                    </h3>
+                                </a>
+                            </li>
+                        
+                            <!-- WhatsApp -->
+                            <li>
+                                <a href="https://wa.me/6282321265711" target="_blank" class="share-btn whatsapp">
+                                    <h3>
+                                        <i class="bi bi-whatsapp"></i>
+                                    </h3>
+                                </a>
+                            </li>
+                        
+                            <!-- Email -->
+                            <li>
+                                <a href="mailto:firmanaonillah@gmail.com" target="_blank" class="share-btn email">
+                                    <h3>
+                                        <i class="bi bi-envelope-fill"></i>
+                                    </h3>
+                                </a>
+                            </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{{ end }}

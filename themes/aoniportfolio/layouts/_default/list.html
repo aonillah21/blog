@@ -1,0 +1,45 @@
+
+{{ define "main" }}
+<main>
+    <div class="row content-utama">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="row pl-2 justify-content-between">
+                {{ range .Pages }}
+                    <div class="col-md-4 mb-4">
+                        <div class="card card-content">
+                            {{if isset .Params "title_image"}}
+                                <a href="{{.Permalink}}">
+                                    <img class="card-img-top" src="{{.Params.title_image}}" alt="Card image cap">
+                                </a>
+                            {{end}}
+                            <div class="card-body">
+                                <div class="content-title">
+                                    <h6 class="card-title text-capitalize"> 
+                                        <a href="{{.Permalink}}">
+                                            {{.Title}}
+                                        </a>
+                                    </h6>
+                                </div>
+                                <p class="card-subtitle mb-2 text-muted author-style">Firman Aonillah</p>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <div class="btn-group">
+                                    {{with .Params.tags}}
+                                        {{range .}}
+                                        <a href="/tags/{{. | urlize}}" class="btn btn-sm mr-2 btn-secondary active"> 
+                                            <i class="bi bi-tag"></i> &nbsp {{.}}
+                                        </a>
+                                        {{end}}
+                                    {{end}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{end}}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{{ end }}

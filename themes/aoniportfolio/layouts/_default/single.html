@@ -1,0 +1,128 @@
+{{ define "main" }}
+    <main class="single-page-container">
+        <hr/>
+        <div class="container">
+            <div class="row px-4">
+                <div class="col-sm-12 article-card">
+                    <div class="container text-justify">
+                        <h2 class="article-title mt-5 text-center" style="color:#39c3d7"> 
+                            <strong> {{ .Title }} </strong>
+                        </h2>
+                        <div class="container pt-5">
+                            <div class="main-article">
+                                {{.Content}}
+                            </div>
+                        </div>
+
+                        <div class="container py-5">
+                            <table class="table">
+                                <thead>
+                                  <tr class="text-center">
+                                    <th colspan="2">Detail Project</th>
+                                  </tr>
+                                </thead>
+                            </table>
+                            <div class="row">
+                                <div class="col-6 left-detail">
+                                    Development Language
+                                </div>
+                                <div class="col-6 right-detail font-weight-bold">
+                                    {{.Params.dev_lang}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 left-detail">
+                                    Framework
+                                </div>
+                                <div class="col-6 right-detail font-weight-bold">
+                                    {{.Params.framework}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 left-detail">
+                                    Development Tools
+                                </div>
+                                <div class="col-6 right-detail font-weight-bold">
+                                    {{.Params.dev_tools}}
+                                </div>
+                            </div>
+
+                            {{if isset .Params "link"}}
+                                <div class="row">
+                                    <div class="col-6 left-detail">
+                                        Application Link
+                                    </div>
+                                    <div class="col-6 right-detail font-weight-bold">
+                                        <a href="{{.Params.link}}">
+                                            {{.Params.link}}
+                                        </a>
+                                    </div>
+                                </div>
+                            {{end}}
+                        </div>
+
+                        <!-- Carousel -->
+                        <div class="container">
+                            <table class="table">
+                                <thead>
+                                  <tr class="text-center">
+                                    <th colspan="2">Gallery</th>
+                                  </tr>
+                                </thead>
+                            </table>
+                            <div class="row row-project">
+                                <div class="col-md-12">
+                                    <div id="custCarousel" class="carousel slide" data-ride="carousel" align="center">
+                                        <!-- slides -->
+                                        <div class="carousel-inner">
+                                            {{with .Params.slide_image}}
+                                                {{range $index, $value := .}}
+                                                    {{ if (eq $index 0) }}
+                                                        <div class="carousel-item active"> 
+                                                            <img loading="lazy" src="{{.}}" alt="Gallery Projects"> 
+                                                        </div>
+                                                    {{else}}
+                                                        <div class="carousel-item"> 
+                                                            <img loading="lazy" src="{{.}}" alt="Gallery Projects"> 
+                                                        </div>
+                                                    {{ end }}
+                                                {{end}}
+                                            {{end}}
+                                        </div> 
+                                        <!-- Left right --> 
+                                        <a class="carousel-control-prev" href="#custCarousel" data-slide="prev"> 
+                                            <span class="carousel-control-prev-icon"></span> 
+                                        </a> 
+                                        <a class="carousel-control-next" href="#custCarousel" data-slide="next"> 
+                                            <span class="carousel-control-next-icon"></span> 
+                                        </a> 
+                                        <!-- Thumbnails -->
+                                        <ol class="carousel-indicators list-inline">
+                                            {{with .Params.slide_image}}
+                                                {{range $index, $value := .}}
+                                                    {{ if (eq $index 0) }}
+                                                        <li class="list-inline-item active"> 
+                                                            <a id="carousel-selector-{{$index}}" class="selected" data-slide-to="{{$index}}" data-target="#custCarousel"> 
+                                                                <img src="{{.}}" class="img-fluid"> 
+                                                            </a> 
+                                                        </li>
+                                                    {{ else }}
+                                                        <li class="list-inline-item"> 
+                                                            <a id="carousel-selector-{{$index}}" class="selected" data-slide-to="{{$index}}" data-target="#custCarousel"> 
+                                                                <img src="{{.}}" class="img-fluid"> 
+                                                            </a> 
+                                                        </li>
+                                                    {{ end }}
+                                                {{end}}
+                                            {{end}}
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{{ end }}
