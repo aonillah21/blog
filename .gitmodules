@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = https://github.com/aonillah21/firman.github.io.git
+	branch = master
