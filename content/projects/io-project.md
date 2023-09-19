@@ -19,11 +19,11 @@ framework: 'React JS (React Boilerplate Starter), Springboot'
 dev_tools: 'Visual Studio Code, Eclipse, Notepad++' 
 ---
 
-IO-Project adalah sebuah aplikasi e-learning yang di gunakan oleh karyawan PT Padepokan Tujuh Sembilan untuk meningkatkan pengetahuan dan skill nya dalam pemrograman. Aplikasi ini juga di pakai untuk aktivitas bootcamp bagi talent-talent yang baru bergabung dengan PT Padepokan Tujuh Sembilan.
+IO-Project is an e-learning application that is used by employees of PT Padepokan Tujuh Sembilan to improve their knowledge and skills in programming. This application is also used for bootcamp activities for new talents joining PT Padepokan Tujuh Sembilan.
 
-Pada development Aplikasi ini saya berkontribusi sebagai technical leader di front end dengan menyiapkan kerangka project dari direktori project, library yang akan di gunakan, juga ikut membantu dalam development saat sprint berjalan. 
+In the development of this application, I contribute as a technical leader at the front end by preparing a project framework, the project directory, the library that will be used, as well as helping with development during the sprint.
 
-Pengerjaan project working report ini berlangsung selama 5 bulan, dari Juli 2019 sampai November 2019.
+Working report project took 5 months, from July 2019 to November 2019.
 
 
 

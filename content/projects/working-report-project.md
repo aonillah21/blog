@@ -20,13 +20,10 @@ framework: 'React JS (React Boilerplate Starter), Springboot'
 dev_tools: 'Visual Studio Code, Eclipse, Notepad++' 
 ---
 
-Working report adalah sebuah aplikasi untuk mengumpulkan informasi mengenai pekerjaan semua karyawan di PT Padepokan Tujuh Sembilan.  Tujuan utama dari aplikasi working report ini adalah untuk memonitoring aktivitas pekerjaan karyawan perbulan sehingga bisa dilihat apakah karyawan yang bersangkutan layak untuk mendapatkan salary pada bulan tersebut.
+Working report is an application to collect information about the work of all employees at PT Padepokan Tujuh Sembilan. The main purpose of this working report application is to monitor the monthly work activities of employees so that it can be seen whether the employee is eligible for a salary for that month.
 
-Pada development Aplikasi ini saya berkontribusi sebagai technical leader di front end dengan menyiapkan kerangka project dari direktori project, library yang akan di gunakan, juga ikut membantu melakukan bugs fixing saat selesai uat. 
+In the development of this application, I contribute as a technical leader at the front end by preparing a project framework from the project directory, the library that will be used, as well as helping with bug fixing when it’s finished loading.
 
-Pengerjaan project working report ini berlangsung selama 6 bulan, dari Desember 2020 sampai Mei 2021.
-
-Detail Project:
-
+The project working report took 6 months, from December 2020 to May 2021.
 
 
